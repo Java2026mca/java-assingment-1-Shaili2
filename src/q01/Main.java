@@ -1,13 +1,46 @@
-import java.util.*;
-
-public class Main {
+ // TODO: Print a hollow diamond pattern of half-height n using '*'
+import java.util.Scanner;
+public class HollowDiamond {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.print("Enter half height (n): ");
         int n = sc.nextInt();
-
-        // TODO: Print a hollow diamond pattern of half-height n using '*'
-        //
-        // Rules:
+        // Upper half
+        for (int i = 1; i <= n; i++) { 
+            // Spaces
+            for (int j = i; j < n; j++) {
+                System.out.print(" ");
+            }
+            // Stars and hollow part
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                if (j == 1 || j == (2 * i - 1)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+        // Lower half
+        for (int i = n - 1; i >= 1; i--) {
+            // Spaces
+            for (int j = n; j > i; j--) {
+                System.out.print(" ");
+            }
+            // Stars and hollow part
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                if (j == 1 || j == (2 * i - 1)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
+}
+// Rules:
         //   - Only border cells have '*', inside is spaces
         //   - No trailing spaces on any line
         //
