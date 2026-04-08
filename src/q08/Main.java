@@ -5,9 +5,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        sc.nextLine(); // consume newline
+        sc.nextLine();
 
-        int[] stack = new int[n]; // max size = n operations
+        int[] stack = new int[n];
         int top = -1;
 
         for (int i = 0; i < n; i++) {
