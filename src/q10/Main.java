@@ -11,7 +11,7 @@ public class Main {
 
         for (String token : tokens) {
 
-
+            // If operator
             if (token.equals("+") || token.equals("-") || 
                 token.equals("*") || token.equals("/")) {
 
@@ -29,12 +29,13 @@ public class Main {
 
                 stack.push(result);
             } 
-
+            // If operand
             else {
                 stack.push(Integer.parseInt(token));
             }
         }
 
+        // Final result
         System.out.println(stack.pop());
 
         sc.close();
